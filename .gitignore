@@ -1,0 +1,206 @@
+# =========================================
+# macOS
+# =========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# =========================================
+# Xcode
+# =========================================
+## Build generated
+build/
+DerivedData/
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+## User-specific files
+xcuserdata/
+*.xcuserdatad/
+
+## Compatibility with Xcode 8 and earlier
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Obj-C/Swift specific
+*.hmap
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## App packaging / archives
+*.ipa
+*.xcarchive
+*.dSYM
+*.dSYM.zip
+
+## Swift Package Manager (local to Xcode project)
+.swiftpm/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+
+## Crash logs
+*.crash
+
+# =========================================
+# Swift Package Manager (standalone packages)
+# =========================================
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
+!*.xcworkspace/contents.xcworkspacedata
+
+# =========================================
+# CocoaPods
+# =========================================
+# Comment the next line if you DO want to check in Pods/
+Pods/
+*.xcworkspace
+
+# =========================================
+# Carthage
+# =========================================
+Carthage/Build/
+# Uncomment if you don't want to commit checked-out source
+# Carthage/Checkouts
+
+# =========================================
+# Accio
+# =========================================
+Dependencies/
+.accio/
+
+# =========================================
+# fastlane
+# =========================================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+fastlane/test_output/
+fastlane/.env
+fastlane/.env.*
+
+# =========================================
+# Code Injection (InjectionForXcode)
+# =========================================
+iOSInjectionProject/
+
+# =========================================
+# SwiftLint
+# =========================================
+.swiftlint_cache/
+
+# =========================================
+# SwiftGen
+# =========================================
+# Generated/Strings.swift
+# Generated/Colors.swift
+# Generated/Assets.swift
+
+# =========================================
+# Sourcery
+# =========================================
+.sourcery/
+# Generated/*.generated.swift
+
+# =========================================
+# R.swift
+# =========================================
+# R.generated.swift
+
+# =========================================
+# Realm
+# =========================================
+*.realm
+*.realm.lock
+*.realm.management/
+
+# =========================================
+# CoreData
+# =========================================
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# =========================================
+# Firebase / Google Services
+# =========================================
+# Uncomment if these contain sensitive keys you don't want in source control
+# GoogleService-Info.plist
+# firebase-debug.log
+# .firebase/
+# .firebaserc
+
+# =========================================
+# Crashlytics / Fabric
+# =========================================
+fabric.properties
+Crashlytics.framework
+Fabric.framework
+
+# =========================================
+# Environment / Secrets / API Keys
+# =========================================
+.env
+.env.local
+.env.*.local
+Secrets.swift
+Secrets.plist
+*.xcconfig
+!Base.xcconfig
+
+# =========================================
+# Tuist (if used for project generation)
+# =========================================
+.tuist/
+Derived/
+*.xcodeproj
+*.xcworkspace
+Tuist/Dependencies/
+
+# =========================================
+# Bundler / Ruby (for fastlane, cocoapods)
+# =========================================
+.bundle/
+vendor/bundle/
+
+# =========================================
+# Editor / IDE
+# =========================================
+.vscode/
+.idea/
+*.swp
+*~.nib
+
+# =========================================
+# Test / Coverage Reports
+# =========================================
+*.gcda
+*.gcno
+*.profdata
+*.profraw
+coverage/
+TestResults/
+*.xcresult
+
+# =========================================
+# Misc
+# =========================================
+*.log
+*.tmp
+*.bak
