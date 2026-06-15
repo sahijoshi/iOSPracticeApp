@@ -16,12 +16,12 @@ Icon
 build/
 DerivedData/
 *.moved-aside
-*.xcuserstate
 *.xcscmblueprint
 *.xccheckout
 
-## User-specific files
+## User-specific files (per-developer, never share these)
 xcuserdata/
+*.xcuserstate
 *.xcuserdatad/
 
 ## Compatibility with Xcode 8 and earlier
@@ -47,29 +47,29 @@ playground.xcworkspace
 *.dSYM
 *.dSYM.zip
 
-## Swift Package Manager (local to Xcode project)
-.swiftpm/
-*.xcodeproj/project.xcworkspace/xcuserdata/
-
 ## Crash logs
 *.crash
 
 # =========================================
-# Swift Package Manager (standalone packages)
+# Swift Package Manager
+# (for SPM dependencies resolved within the Xcode project)
 # =========================================
 .build/
-Packages/
-Package.pins
-Package.resolved
-*.xcodeproj
-!*.xcworkspace/contents.xcworkspacedata
+.swiftpm/
+
+# Keep Package.resolved committed for reproducible builds —
+# do NOT ignore it unless your team prefers floating versions
+# Package.resolved
 
 # =========================================
 # CocoaPods
 # =========================================
 # Comment the next line if you DO want to check in Pods/
 Pods/
-*.xcworkspace
+
+# If using CocoaPods, you'll have a workspace — keep it,
+# but ignore its user-specific data
+*.xcworkspace/xcuserdata/
 
 # =========================================
 # Carthage
@@ -77,12 +77,6 @@ Pods/
 Carthage/Build/
 # Uncomment if you don't want to commit checked-out source
 # Carthage/Checkouts
-
-# =========================================
-# Accio
-# =========================================
-Dependencies/
-.accio/
 
 # =========================================
 # fastlane
@@ -106,21 +100,14 @@ iOSInjectionProject/
 .swiftlint_cache/
 
 # =========================================
-# SwiftGen
+# SwiftGen / Sourcery / R.swift (generated code)
+# Uncomment any of these if you regenerate at build time
+# and don't want generated files in git
 # =========================================
 # Generated/Strings.swift
 # Generated/Colors.swift
 # Generated/Assets.swift
-
-# =========================================
-# Sourcery
-# =========================================
-.sourcery/
-# Generated/*.generated.swift
-
-# =========================================
-# R.swift
-# =========================================
+# .sourcery/
 # R.generated.swift
 
 # =========================================
@@ -131,7 +118,7 @@ iOSInjectionProject/
 *.realm.management/
 
 # =========================================
-# CoreData
+# CoreData (local SQLite stores)
 # =========================================
 *.sqlite
 *.sqlite-shm
@@ -140,11 +127,12 @@ iOSInjectionProject/
 # =========================================
 # Firebase / Google Services
 # =========================================
-# Uncomment if these contain sensitive keys you don't want in source control
+# Most teams commit GoogleService-Info.plist (it's a config
+# identifier, not a true secret). Uncomment if you manage
+# per-environment configs and don't want them in git:
 # GoogleService-Info.plist
-# firebase-debug.log
-# .firebase/
-# .firebaserc
+firebase-debug.log
+.firebase/
 
 # =========================================
 # Crashlytics / Fabric
@@ -163,15 +151,7 @@ Secrets.swift
 Secrets.plist
 *.xcconfig
 !Base.xcconfig
-
-# =========================================
-# Tuist (if used for project generation)
-# =========================================
-.tuist/
-Derived/
-*.xcodeproj
-*.xcworkspace
-Tuist/Dependencies/
+!Shared.xcconfig
 
 # =========================================
 # Bundler / Ruby (for fastlane, cocoapods)
@@ -185,7 +165,6 @@ vendor/bundle/
 .vscode/
 .idea/
 *.swp
-*~.nib
 
 # =========================================
 # Test / Coverage Reports
