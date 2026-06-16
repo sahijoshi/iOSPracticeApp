@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @State private var currentPage: Int = 0
+    
     var body: some View {
         ZStack {
             Image("welcome_bg")
@@ -15,49 +17,42 @@ struct WelcomeView: View {
                 .scaledToFill()
             Rectangle()
                 .foregroundColor(.black)
-                .opacity(0.5)
+                .opacity(0.6)
             
             VStack {
-                VStack(spacing:10) {
-                    Text("Find Your Perfect Venue")
-                        .foregroundColor(.white)
-                        .font(.system(size: 36, weight: .medium, design: .serif))
-                        .multilineTextAlignment(.center)
+                WelcomeCard2(currentPage: $currentPage)
+                RoundButton(title: "GET STARTED") {
                     
-                    Text("Discover banquet halls, cafés & event spaces across Kathmandu")
-                        .foregroundColor(.white)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
                 }
-                .padding(.horizontal, 60)
-                .padding(.bottom, 60)
-
-                Button {
-                    
-                } label: {
-                    Text("GET STARTED")
-                }
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, maxHeight: 52)
-                .background(.orange)
-                .cornerRadius(14)
                 
                 HStack {
                     Text("Already have an account?")
                         .foregroundColor(.white)
-                        
+                    
                     Button {
                         
                     } label: {
                         Text("Sign In")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .underline()
                     }
-                    .foregroundStyle(.white)
-                    .underline()
-                    .font(.headline)
+                    
                 }
-                .padding(.top, 20)
+                .padding([.top, .bottom], 20)
+                
+                HStack(spacing: 8) {
+                    ForEach(0...2, id: \.self) { index in
+                        Circle()
+                            .fill(currentPage == index ? .white : .white.opacity(0.4))
+                            .frame(width: 8, height: 8)
+                            .scaleEffect(currentPage == index ? 1.3 : 1.0)
+                            .animation(.easeInOut, value: currentPage)
+                    }
+                }
             }
             .padding(.horizontal, 10)
+            
         }
         .ignoresSafeArea()
     }
