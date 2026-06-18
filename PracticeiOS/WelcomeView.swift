@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var currentPage: Int = 0
-    
+
     var body: some View {
         ZStack {
             Image("welcome_bg")
@@ -22,24 +22,26 @@ struct WelcomeView: View {
             VStack {
                 WelcomeCard2(currentPage: $currentPage)
                 RoundButton(title: "GET STARTED") {
-                    
+                    print("sign in clicked...")
                 }
                 
                 HStack {
                     Text("Already have an account?")
                         .foregroundColor(.white)
                     
-                    Button {
-                        
+                    NavigationLink {
+                        SignIn()
                     } label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(.white)
                             .underline()
                     }
-                    
                 }
-                .padding([.top, .bottom], 20)
+                .padding(.top, 20)
+                
+                Spacer()
+                    .frame(height: 40)
                 
                 HStack(spacing: 8) {
                     ForEach(0...2, id: \.self) { index in
@@ -59,5 +61,7 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    NavigationView {
+        WelcomeView()
+    }
 }
